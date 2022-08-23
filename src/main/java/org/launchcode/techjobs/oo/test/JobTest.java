@@ -24,6 +24,13 @@ public class JobTest {
 //        System.out.println(job2.getId());
     }
 
+//    Job job;
+//
+//    @Before
+//    public void jobInstance(){
+//        Job job = new Job("Product tester", new Employer("ACME"), new Location("Desert"), new PositionType("Quality control"), new CoreCompetency("Persistence"));
+//    }
+
     @Test
     public void testJobConstructorSetsAllFields(){
         Job job = new Job("Product tester", new Employer("ACME"), new Location("Desert"), new PositionType("Quality control"), new CoreCompetency("Persistence"));
@@ -45,6 +52,26 @@ public class JobTest {
 //        Job job2 = new Job("Product tester", new Employer("ACME"), new Location("Desert"), new PositionType("Quality control"), new CoreCompetency("Persistence"));
 //    Assert.assertEquals(job,job2);
 //    }
+
+
+    @Test
+    public void testToStringStartsAndEndsWithNewLine(){
+        Job job = new Job("Product tester", new Employer("ACME"), new Location("Desert"), new PositionType("Quality control"), new CoreCompetency("Persistence"));
+        Assert.assertEquals('\n', job.toString().charAt(0));
+        Assert.assertEquals('\n', job.toString().charAt(job.toString().length()-1));
+    }
+
+//    @Test
+//    public void testToStringContainsLabelsAndData(){
+//        Job job = new Job("Product tester", new Employer("ACME"), new Location("Desert"), new PositionType("Quality control"), new CoreCompetency("Persistence"));
+//        Assert.assertEquals("\nID: " +
+//                        "\nName: " +
+//                        "\nEmployer:" +
+//                        "\nLocation:" +
+//                        "\nPosition Type: " +
+//                        "\nCore Competency:" + "\n");
+//    }
+
 
 }
 

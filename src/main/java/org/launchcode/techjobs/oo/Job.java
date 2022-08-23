@@ -77,4 +77,19 @@ public class Job {
     public CoreCompetency getCoreCompetency() {
         return coreCompetency;
     }
+
+    @Override
+    public String toString(){
+        return "\nID:"+ this.id + this.name + this.employer + this.location + this.positionType
+        + this.coreCompetency + "\n";
+    }
 }
+
+
+
+//ID: " +
+//        "\nName: " +
+//        "\nEmployer: " +
+//        "\nLocation: " +
+//        "\nPosition Type: " +
+//        "\nCore Competency:
