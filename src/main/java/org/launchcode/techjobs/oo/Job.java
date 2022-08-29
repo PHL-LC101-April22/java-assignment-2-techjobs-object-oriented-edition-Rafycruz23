@@ -41,18 +41,38 @@ public class Job {
         if (this == o) return true;
         if (!(o instanceof Job)) return false;
         Job job = (Job) o;
-        return id == job.id && name.equals(job.name) && employer.equals(job.employer) && location.equals(job.location) && positionType.equals(job.positionType) && coreCompetency.equals(job.coreCompetency);
+        return id == job.getId();
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(id, name, employer, location, positionType, coreCompetency);
+        return Objects.hash(id);
     }
 
 
     // DONE TODO: Add getters for each field EXCEPT nextId. Add setters for each field EXCEPT nextID
     //  and id.
 
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public void setEmployer(Employer employer) {
+        this.employer = employer;
+    }
+
+    public void setLocation(Location location) {
+        this.location = location;
+    }
+
+    public void setPositionType(PositionType positionType) {
+        this.positionType = positionType;
+    }
+
+    public void setCoreCompetency(CoreCompetency coreCompetency) {
+        this.coreCompetency = coreCompetency;
+    }
 
     public int getId() {
         return id;
@@ -80,16 +100,27 @@ public class Job {
 
     @Override
     public String toString(){
-        return "\nID:"+ this.id + this.name + this.employer + this.location + this.positionType
-        + this.coreCompetency + "\n";
+
+
+        if(this.name.equals("")){
+            this.name = "Data not available";
+        }
+        if (employer.toString().equals("")) {
+           employer.setValue("Data not available");
+        }
+        if (coreCompetency.toString().equals("")) {
+            coreCompetency.setValue("Data not available");
+        }
+        if (positionType.toString().equals("")) {
+            positionType.setValue("Data not available");
+        }
+        if (location.toString().equals("")) {
+            location.setValue("Data not available");
+        }
+
+
+        return "\nID: "+ this.id + "\nName: "+ this.name + "\nEmployer: "+ this.employer + "\nLocation: "+this.location +"\nPosition Type: "+ this.positionType +
+        "\nCore Competency: " + this.coreCompetency + "\n";
     }
 }
 
-
-
-//ID: " +
-//        "\nName: " +
-//        "\nEmployer: " +
-//        "\nLocation: " +
-//        "\nPosition Type: " +
-//        "\nCore Competency:
